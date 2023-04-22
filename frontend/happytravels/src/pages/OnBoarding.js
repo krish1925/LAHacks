@@ -5,10 +5,10 @@ function OnBoarding() {
 const nameInput = React.useRef(null);
 const emailInput = React.useRef(null);
 const numberInput = React.useRef(null);
-const ageInput = React.useRef(null);
 const usernameInput = React.useRef(null);
 const passwordInput = React.useRef(null);
 const confirmPasswordInput = React.useRef(null);
+const interestInput = React.useRef(null);
 
 const handleSubmit = (event) => {
 event.preventDefault();
@@ -16,10 +16,11 @@ console.log(
 nameInput.current.value,
 emailInput.current.value,
 numberInput.current.value,
-ageInput.current.value,
 usernameInput.current.value,
 passwordInput.current.value,
-confirmPasswordInput.current.value
+confirmPasswordInput.current.value,
+interestInput.current.value
+
 );
 };
 
@@ -60,26 +61,11 @@ Number
 </label>
 <input
          type="tel"
-         placeholder="Please Enter Your Phone No."
+         placeholder="Please Enter Your Phone Number"
          class="form-control"
          id="number"
          required
          ref={numberInput}
-       />
-</div>
-<div class="mb-3">
-<label for="age" class="form-label">
-Age
-</label>
-<input
-         type="number"
-         placeholder="Please Enter Your Age"
-         class="form-control"
-         id="age"
-         min="18"
-         max="120"
-         required
-         ref={ageInput}
        />
 </div>
 <div class="mb-3">
@@ -88,11 +74,23 @@ Username
 </label>
 <input
          type="text"
-         placeholder="Please choose a username"
+         placeholder="Please Choose a Username"
          class="form-control"
          id="username"
          required
          ref={usernameInput}
+       />
+</div>
+<div class="mb-3">
+<label for="Interests/Hobbies" class="form-label">
+Interests & Hobbies
+</label>
+<input
+         type="interests"
+         placeholder="Share What You Enjoy Doing for People to See! (optional)"
+         class="form-control"
+         id="interests"
+         ref={interestInput}
        />
 </div>
 <div class="mb-3">
@@ -101,6 +99,7 @@ Password
 </label>
 <input
          type="password"
+         placeholder="Please Choose a Password"
          class="form-control"
          id="password"
          required
@@ -113,6 +112,7 @@ Confirm Password
 </label>
 <input
          type="password"
+         placeholder="Please Confirm Your Password"
          class="form-control"
          id="confirmPassword"
          required
@@ -120,7 +120,7 @@ Confirm Password
        />
 </div>
 <button type="submit" class="btn btn-primary">
-Register
+Sign Up
 </button>
 </form>
 </div>
