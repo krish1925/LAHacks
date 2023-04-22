@@ -23,23 +23,35 @@ app.get('/feed', (req, res) => {
 app.get('/signup', (req,res) => {
     res.json('hello')
 })
-app.post('/users',async(req,res)=> {
-    res.json('hello')
-})
-
 
 app.post('/signup', async (req, res) => {
-  try {
-    const userData = req.body;
-    const db = client.db('app-data');
-    const users = db.collection('users');
-    const result = await users.insertOne(userData);
-    res.json(result);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
+    try {
+      const userData = req.body;
+      const db = client.db('app-data');
+      const users = db.collection('users');
+      const result = await users.insertOne(userData);
+      res.json(result);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  })
+
+app.post('/users', async (req, res) => {
+    try {
+      const userData = req.body;
+      const db = client.db('app-data');
+      const users = db.collection('users');
+      const result = await users.insertOne(userData);
+      res.json(result);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  })
+
+
+
 
 app.get('/users',async(req,res)=> {
     const client = new MongoClient(uri)
