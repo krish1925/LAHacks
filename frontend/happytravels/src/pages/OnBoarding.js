@@ -9,6 +9,8 @@ const usernameInput = React.useRef(null);
 const passwordInput = React.useRef(null);
 const confirmPasswordInput = React.useRef(null);
 const interestInput = React.useRef(null);
+const imageInput = React.useRef(null);
+const pronounInput = React.useRef(null);
 
 const handleSubmit = (event) => {
 event.preventDefault();
@@ -19,7 +21,9 @@ numberInput.current.value,
 usernameInput.current.value,
 passwordInput.current.value,
 confirmPasswordInput.current.value,
-interestInput.current.value
+interestInput.current.value,
+imageInput.current.value,
+pronounInput.current.value
 
 );
 };
@@ -82,8 +86,20 @@ Username
        />
 </div>
 <div class="mb-3">
+<label for="pronouns" class="form-label">
+Pronouns
+</label>
+<input
+         placeholder="Please Enter Your Pronouns (optional)"
+         type="text"
+         class="form-control"
+         id="pronouns"
+         ref={pronounInput}
+       />
+</div>
+<div class="mb-3">
 <label for="Interests/Hobbies" class="form-label">
-Interests & Hobbies
+Bio
 </label>
 <input
          type="interests"
@@ -91,6 +107,18 @@ Interests & Hobbies
          class="form-control"
          id="interests"
          ref={interestInput}
+       />
+</div>
+<div class="mb-3">
+<label for="Profile Picture" class="form-label">
+Profile Picture
+</label>
+<input
+         type="profile-pic"
+         placeholder="Submit a Link to an Image to Be Your Profile Picture (optional)"
+         class="form-control"
+         id="profile-pic"
+         ref={imageInput}
        />
 </div>
 <div class="mb-3">
