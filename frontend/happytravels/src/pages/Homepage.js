@@ -1,18 +1,20 @@
 import React from "react";
+import "./Homepage.css"
 import Nav from "../components/Nav";
 
 function Homepage() {
     return (
-      <div>
+      <div class = "homepage">
           <Nav />
-          <div style={{ margin: '20% 35%' }}>
-              <h1>Search, Explore </h1>
-                <input type="text" placeholder="Search..."></input>
-                <button type="submit">Search</button>
+          <div class = "center-stuff"> 
+              <h1>Explore</h1>
+                <input type="text" placeholder="Search for a destination..."></input>
+                <button type="submit">Go</button>
+                <button type="random"> Take Me Anywhere</button>
+                </div>
           </div>  
-      </div>
     );
-  }
+}
   
   
 export default Homepage;
