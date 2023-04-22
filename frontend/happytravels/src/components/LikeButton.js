@@ -17,7 +17,9 @@ const LikeButton = () => {
   return (
     <button className={ `like-button ${isClicked && 'liked'}` } onClick={ handleClick }>
       <span className="likes-counter">{ '♡' }</span>
-    </button>
+      <br />
+      <span className="likes">{ likes }</span>
+  </button>
   );
 };
 
