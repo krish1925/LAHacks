@@ -8,6 +8,7 @@ import OnBoarding from './pages/OnBoarding';
 import Itinenary from './pages/Itinenary';
 import Recommendations from './pages/Recommendations';
 import Safety from './pages/Safety';
+import ViewProfile from './pages/ViewProfile';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
     <Route path="/Itinenary" element={<Itinenary/>}/>
     <Route path="/OnBoarding" element={<OnBoarding/>}/>
     <Route path="/Safety" element={<Safety/>}/>
+    <Route path="/ViewProfile" element={<ViewProfile/>}/>
     </Routes>
     </BrowserRouter>
   );
