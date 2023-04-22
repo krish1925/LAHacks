@@ -5,8 +5,11 @@ function Homepage() {
     return (
       <div>
           <Nav />
-        <h1>THIS IS PART OF THE HOMEPAGE</h1>
-        
+          <div style={{ margin: '20% 35%' }}>
+              <h1>Search, Explore </h1>
+                <input type="text" placeholder="Search..."></input>
+                <button type="submit">Search</button>
+          </div>  
       </div>
     );
   }

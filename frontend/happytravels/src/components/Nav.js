@@ -6,6 +6,11 @@ function Nav() {
     <div>
       <ul className="nav nav-tabs">
         <li className="nav-item">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link to="/recommendations" className="nav-link">
             Recommendations
           </Link>
@@ -15,6 +20,7 @@ function Nav() {
             Itinerary
           </Link>
         </li>
+
         <li className="nav-item">
           <Link to="/feed" className="nav-link">
             Feed

@@ -27,6 +27,21 @@
 .App-link {
   color: #61dafb;
 }
+/* CSS */
+.card {
+  margin-bottom: 20px;
+  margin-top : 20px;
+  margin-left: 80px;
+  margin-right : 80px;
+  width: 900px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  }
+  
+  .feed-image {
+  width: 150px;
+  height: 150px;
+  }
 
 @keyframes App-logo-spin {
   from {
