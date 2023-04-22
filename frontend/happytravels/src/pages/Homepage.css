@@ -1,0 +1,68 @@
+ /* body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+  } */
+
+
+ /* div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  } */
+
+/* .homepage .center-stuff{
+    align-items: center;
+    position: absolute; /* or relative, depending on your layout */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */ 
+    /* text-align: center; */
+/* } */
+  
+  /* Target the heading */
+  /* h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 5vw;
+    margin-bottom: 20px;
+    text-align: center; */
+    /* text-align: center; */
+  /* } */
+  
+/* input[type="text"] { */
+    /* display: flex; /* Use flexbox to align the content */
+    /* justify-content: center; Horizontally center the content */
+    /* align-items: center; Vertically center the content */
+    /* padding: 10px;
+    border-radius: 30px;
+    border: 2px solid lightgray;
+    font-size: 1.2em; */
+    /* width: 800px; /* Use a fixed width that suits your design */
+    /* height: 5%; 
+    margin: 0 auto; Center the element horizontally 
+}   */
+
+/* Target the search button */
+/* button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #f64775;
+    color: #fff;
+    border: none;
+    margin-top: ;
+    border-radius: 5px;
+    font-size: 1.1em;
+    margin-right: 20px; */
+    /* height: 5%; set the same height as the input field */
+/* }  */
+
+/* button[type="random"] {
+    padding: 10px 20px;
+    background-color: #f64775;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    height: 5%; set the same height as the input field */
+ /* }  */

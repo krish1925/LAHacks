@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 
 function OnBoarding() {
     return (
-      <div>
+      <div class="registration">
           <Nav />
           <h1 style={{ margin: '0 35%' }}> Registration Form</h1>
         <form style={{ margin: '0 20%' }}>
