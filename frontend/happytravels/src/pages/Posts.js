@@ -89,15 +89,15 @@ function Posts() {
                     <section>
                         <label htmlFor="about">Image (optional)</label>
                         <input
-                            type="img"
-                            name="url"
+                            type="url"
+                            name="img"
                             id="img"
                             onChange={handleChange}
                             required={false}
                         />
 
                         <div className="photo-container">
-                         {formData.url &&   <img src={formData.img} alt="profile picture preview"/>}
+                         {formData.img &&   <img src={formData.img} alt="image preview"/>}
                         </div>
 
                         <label>Category</label>
