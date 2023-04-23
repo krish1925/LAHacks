@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "./Feed.css"
 import Nav from "../components/Nav";
-//import LikeButton from "../components/LikeButton";
+import LikeButton from "../components/LikeButton";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -20,16 +20,23 @@ function Feed() {
   }, []);
 
   return (
-    <div>
+    <div class="whole-body">
       <Nav />
+      <div class = "body">
+      <h1> Feed </h1>
+      <div class = "post-card">
       {posts.map(post => (
         <div key={post._id} className="card">
-          <h1>{post.formData.username}</h1>
-          <h1>{post.formData.location}</h1>
-          <img src={post.formData.img} alt="post picture" />
-          <p><b>Bio:</b> {post.formData.caption}</p>
+          <h2> <span style={{ fontWeight: 'bold', fontSize: '30px' }}>{post.formData.username}</span> {' • '} <span style={{ color: '#999' , fontSize: '20px'}}>{post.formData.location}</span> </h2>
+          <div class="content">
+          <img src={post.formData.img} alt="post picture"  />
+          <p><b></b> {post.formData.caption}</p>
+          </div>
+          <LikeButton></LikeButton>
         </div>
       ))}
+      </div>
+      </div>
     </div>
   );
 }

@@ -17,8 +17,27 @@
     font-weight: bold;
     font-size: 50px;
     text-align: center;
+    color: #2b2c2c;
     padding-top: 30px;
     padding-bottom: 10px;
-
 }
+
+.body h2{
+    font-size: 20px;
+}
+
+.content{
+    display: flex;
+}
+
+.content p{
+    margin-left: 10px;
+}
+
+.content img{
+    height: 200px;
+    width: 200px;
+}
+
+
 

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import "./LikeButton.css"
 
 
 const LikeButton = () => {
-  const [likes, setLikes] = useState(100);
+  const [likes, setLikes] = useState(10);
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
@@ -15,11 +16,11 @@ const LikeButton = () => {
   };
 
   return (
-    <button className={ `like-button ${isClicked && 'liked'}` } onClick={ handleClick }>
-      <span className="likes-counter">{ '♡' }</span>
-      <br />
+    <button className={`like-button ${isClicked && 'liked'}`} onClick={handleClick}>
+      <span className="likes-counter">{ ' ♥ ' }</span>
       <span className="likes">{ likes }</span>
-  </button>
+    </button>
+
   );
 };
 

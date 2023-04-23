@@ -33,7 +33,7 @@
   margin-top : 20px;
   margin-left: 80px;
   margin-right : 80px;
-  width: 900px;
+  width: 800px;
   padding: 10px;
   border: 1px solid #ccc;
   }
@@ -43,6 +43,10 @@
   height: 150px;
   }
 
+.Likebutton{
+  background-color: #61dafb;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -51,3 +55,4 @@
     transform: rotate(360deg);
   }
 }
+

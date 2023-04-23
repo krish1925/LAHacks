@@ -1,0 +1,23 @@
+.like-button {
+    background: none;
+    text-align: left;
+    border: none;
+    width: 70px;
+  }
+  
+  .likes-counter {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .likes {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+  .liked .likes-counter {
+    color: #f85072;
+  }
