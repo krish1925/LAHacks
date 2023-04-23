@@ -8,7 +8,6 @@ function Homepage() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState ({
-    // user_id: cookies.UserId,
     category: ''
 })
 
