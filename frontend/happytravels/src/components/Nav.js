@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import { useCookies } from 'react-cookie';
+import "./Nav.css"
 import apiClient from "../apiClient";
 
 function Nav() {

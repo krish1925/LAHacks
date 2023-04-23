@@ -1,0 +1,14 @@
+.nav{
+    background-color: #f85072;
+
+}
+
+.nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #2b2c2c;
+    border: none;
+  }
