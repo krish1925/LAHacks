@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import "./LikeButton.css"
 
-
 const LikeButton = () => {
   const [likes, setLikes] = useState(10);
   const [isClicked, setIsClicked] = useState(false);
