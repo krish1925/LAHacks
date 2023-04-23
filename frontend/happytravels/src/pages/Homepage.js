@@ -21,7 +21,7 @@ function Homepage() {
       {/* <Nav /> */}
       <div class="homepage">
         <div class="fade-in-text">
-          <h1>Wanderlust</h1>
+          <h1>Explorely</h1>
         </div>
         <form onSubmit={handleSubmit}>
           <input 
