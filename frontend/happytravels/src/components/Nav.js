@@ -31,6 +31,11 @@ function Nav() {
             Safety
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/OnBoarding" className="nav-link">
+            OnBoarding
+          </Link>
+        </li>
       </ul>
     </div>
   );
