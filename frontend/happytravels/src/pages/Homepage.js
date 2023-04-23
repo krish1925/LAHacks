@@ -16,13 +16,13 @@ function Homepage() {
 
   return (
     <div>
-        <Nav />
+        {/* <Nav /> */}
         <div class = "homepage">
           <div class = "fade-in-text">
             <h1>Wanderlust</h1>
             </div>
         {/* <input type="text" placeholder="Search..." onChange={onChangeHandler} value={inputValue}></input> */}
-        <input type="text" placeholder="   Search destinations" 
+        <input type="text" placeholder="Search destinations" style={{ marginLeft: '20px' }} 
           onChange={onChangeHandler} 
           value={inputValue}
         ></input>

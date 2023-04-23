@@ -60,11 +60,13 @@ function Nav() {
             </li>
         </>
         ) : (
-          <li className="nav-item">
-          <Link to="/LoginPage" className="nav-link">
-            Login
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <li className="nav-item1">
+          <Link to="/Posts" className="nav-link" style={{ position: 'absolute', right: 0 }}>
+            Create Post
           </Link>
         </li>
+        </div>
         )}
       </ul>
     </div>
