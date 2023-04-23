@@ -18,7 +18,7 @@ function Homepage() {
 
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <div class="homepage">
         <div class="fade-in-text">
           <h1>Wanderlust</h1>
