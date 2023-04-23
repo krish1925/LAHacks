@@ -1,7 +1,7 @@
- /* body {
+ body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-  } */
+  }
 
 
  /* div > div {
@@ -11,58 +11,66 @@
     justify-content: center;
     height: 100%;
   } */
-
-/* .homepage .center-stuff{
-    align-items: center;
-    position: absolute; /* or relative, depending on your layout */
-  /* top: 50%;
+.homepage{
+  align-items: center;
+  position: absolute; /* or relative, depending on your layout */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */ 
-    /* text-align: center; */
-/* } */
-  
-  /* Target the heading */
-  /* h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 5vw;
-    margin-bottom: 20px;
-    text-align: center; */
-    /* text-align: center; */
-  /* } */
-  
-/* input[type="text"] { */
-    /* display: flex; /* Use flexbox to align the content */
-    /* justify-content: center; Horizontally center the content */
-    /* align-items: center; Vertically center the content */
-    /* padding: 10px;
-    border-radius: 30px;
-    border: 2px solid lightgray;
-    font-size: 1.2em; */
-    /* width: 800px; /* Use a fixed width that suits your design */
-    /* height: 5%; 
-    margin: 0 auto; Center the element horizontally 
-}   */
+  transform: translate(-50%, -50%);  
+  /* text-align: center; */
+    
+}
 
-/* Target the search button */
-/* button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #f64775;
-    color: #fff;
-    border: none;
-    margin-top: ;
-    border-radius: 5px;
-    font-size: 1.1em;
-    margin-right: 20px; */
-    /* height: 5%; set the same height as the input field */
-/* }  */
+.fade-in-text h1{
+  font-weight: bold;
+  font-size: 150px;
+  margin-top: 2px;
+  font-family: "Snell Roundhand", cursive;
+  color: #2b2c2c;
+  animation: fadeIn 5s;
+}
 
-/* button[type="random"] {
-    padding: 10px 20px;
-    background-color: #f64775;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    height: 5%; set the same height as the input field */
- /* }  */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+input[type="text"]{
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 30px;
+  border: 2px solid lightgray;
+  width: 600px;
+  height: 40px;
+}
+  
+button[type="submit"]{
+  padding: 10px 20px;
+  background-color: #f85072;
+  border: none;
+  color: #ffff;
+  border-radius: 30px;
+  margin-left: 15px;
+  font-weight: bold;
+}

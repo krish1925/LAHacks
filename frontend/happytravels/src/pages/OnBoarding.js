@@ -5,11 +5,8 @@ import {useState} from 'react'
 import Nav from '../components/Nav'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import apiClient from '../apiClient'
-import { useCookies } from 'react-cookie';
 
 function OnBoarding() {
-    const [cookies, setCookie, removeCookie] = useCookies(['user']);
     // const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState ({
         // user_id: cookies.UserId,
@@ -33,21 +30,35 @@ function OnBoarding() {
           alert("Passwords do not match");
         }
         else{
-            console.log("submitted");
-        
-            try {
-            const response = await axios.post("http://localhost:8000/users", { formData });
-            const success = response.status === 200;
-                if (success) {
+        // const isInvalidBirthday = formData.dob_day > 31 ||
+        //   formData.dob_month > 12 ||
+        //   formData.dob_year > 2023;
+      
+        // const isFocusOnSchool = formData.dob_year > 2010;
+      
+        // if (isInvalidBirthday) {
+        //   alert("Invalid birthday");
+        //   return; // early return to avoid clearing form data
+        // }
+      
+        // if (isFocusOnSchool) {
+        //   alert("Focus on school bro");
+        //   return; // early return to avoid clearing form data
+        // }
+        console.log("submitted");
+      
+        try {
+          const response = await axios.post("http://localhost:8000/users", { formData });
+          const success = response.status === 200;
+          if (success) {
                     navigate("/feed")
                     apiClient.setToken(response.data.token)
                     setCookie('AuthToken', response.data.token, { path: '/' });
                     setCookie('username', formData.username, { path: '/' });
                     console.log('signuped');
                 };
-            } catch (err) {
-            console.log(err);
-            }
+        } catch (err) {
+          console.log(err);
         }
     };
       

@@ -11,6 +11,7 @@ import Safety from './pages/Safety';
 import ViewProfile from './pages/ViewProfile';
 import React, { useState } from "react";
 import { useCookies } from 'react-cookie';
+import Posts from './pages/Posts'
 
 const App = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
@@ -31,6 +32,7 @@ const App = () => {
     <Route path="/OnBoarding" element={<OnBoarding/>}/>
     <Route path="/Safety" element={<Safety/>}/>
     <Route path="/ViewProfile" element={<ViewProfile/>}/>
+    <Route path="/Posts" element={<Posts/>}/>
     </Routes>
     </BrowserRouter>
   );
