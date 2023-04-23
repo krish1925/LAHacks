@@ -9,8 +9,17 @@ import Itinenary from './pages/Itinenary';
 import Recommendations from './pages/Recommendations';
 import Safety from './pages/Safety';
 import ViewProfile from './pages/ViewProfile';
+import React, { useState } from "react";
+import { useCookies } from 'react-cookie';
 
 const App = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
+
+  React.useEffect(()=>{
+
+  },[])
+
+
   return (
     <BrowserRouter>
     <Routes>
