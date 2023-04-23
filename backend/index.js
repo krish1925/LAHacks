@@ -131,4 +131,31 @@ app.get('/posts',async(req,res)=> {
 
 } )
 
+app.post('/location', async (req, res) => {
+    try {
+      const userData = req.body;
+      const db = client.db('app-data');
+      const users = db.collection('location');
+      const result = await users.insertOne(userData);
+      res.json(result);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  })
+  
+  app.get('/location',async(req,res)=> {
+    const client = new MongoClient(uri)
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const users = database.collection('location')
+        const returnedUsers = await users.find().toArray()
+        res.send(returnedUsers)
+    } finally{
+        await client.close()
+    }
+  
+  } )
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
