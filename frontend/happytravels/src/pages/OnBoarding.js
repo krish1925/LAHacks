@@ -30,7 +30,7 @@ function OnBoarding() {
         e.preventDefault();
       
         if (formData.password !== formData.confirmpassword){
-          alert("Passowrds do not match");
+          alert("Passwords do not match");
         }
         else{
         // const isInvalidBirthday = formData.dob_day > 31 ||

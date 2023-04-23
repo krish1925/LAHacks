@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCookies } from 'react-cookie';
 
 function Nav() {
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    // perform logout action here
+  };
+
   return (
     <div>
       <ul className="nav nav-tabs">
@@ -22,7 +29,6 @@ function Nav() {
             Itinerary
           </Link>
         </li>
-
         <li className="nav-item">
           <Link to="/feed" className="nav-link">
             Feed
@@ -44,6 +50,31 @@ function Nav() {
             Login
           </Link>
         </li>}
+      {isLoggedIn ? (
+         <>  
+            <li className="nav-item">
+              <Link to="/post" className="nav-link">
+                Post
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/ViewProfile" className="nav-link">
+                View Profile
+              </Link>
+            </li>
+            <li className="nav-item">
+              <button onClick={handleLogout} className="btn btn-primary">
+                Logout
+              </button>
+            </li>
+        </>
+        ) : (
+          <li className="nav-item">
+          <Link to="/LoginPage" className="nav-link">
+            Login
+          </Link>
+        </li>
+        )}
       </ul>
     </div>
   );

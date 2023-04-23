@@ -22,10 +22,11 @@ function ViewProfile() {
       <Nav />
       {users.map(user => (
         <div key={user._id} className="profile">
-          <h1>{user.Name}</h1>
-          <img src={user.url} alt="profile picture" />
-          <p> ({user.Pronouns}) </p>
-          <p><b>About Me:</b> {user.about}</p>
+          <h1>{user.formData.first_name}</h1>
+          <h1>{user.formData.last_name}</h1>
+          <h1>{user.formData.pronouns}</h1>
+          <img src={user.formData.url} alt="profile picture" />
+          <p><b>Bio:</b> {user.formData.about}</p>
         </div>
       ))}
     </div>
