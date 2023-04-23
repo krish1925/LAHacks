@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 function Nav() {
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
   return (
     <div>
       <ul className="nav nav-tabs">
@@ -31,11 +33,17 @@ function Nav() {
             Safety
           </Link>
         </li>
-        <li className="nav-item">
+
+        {cookies.AuthToken ? null : <li className="nav-item">
           <Link to="/OnBoarding" className="nav-link">
             OnBoarding
           </Link>
-        </li>
+        </li>}
+        {cookies.AuthToken ? null : <li className="nav-item">
+          <Link to="/loginpage" className="nav-link">
+            Login
+          </Link>
+        </li>}
       </ul>
     </div>
   );
