@@ -10,13 +10,14 @@ function OnBoarding() {
     // const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState ({
         // user_id: cookies.UserId,
-        user_id: '',
+        username: '',
         first_name: '',
         last_name: '',
         pronouns: '',
         url: '',
         about: '',
-        password: ''
+        password: '',
+        confirmpassword: ''
     })
 
     let navigate = useNavigate()
@@ -25,6 +26,10 @@ function OnBoarding() {
     const handleSubmit = async (e) => {
         e.preventDefault();
       
+        if (formData.password !== formData.confirmpassword){
+          alert("Passowrds do not match");
+        }
+        else{
         // const isInvalidBirthday = formData.dob_day > 31 ||
         //   formData.dob_month > 12 ||
         //   formData.dob_year > 2023;
@@ -40,7 +45,6 @@ function OnBoarding() {
         //   alert("Focus on school bro");
         //   return; // early return to avoid clearing form data
         // }
-      
         console.log("submitted");
       
         try {
@@ -50,12 +54,14 @@ function OnBoarding() {
         } catch (err) {
           console.log(err);
         }
+      }
       };
       
 
     function handleChange(e) {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
         const name = e.target.name;
+ 
 
         setFormData ((prevState) => ({
             ...prevState,
@@ -104,18 +110,29 @@ function OnBoarding() {
                             onChange={handleChange}
                         />
 
-                        <label htmlFor="pronouns">Last Name</label>
+                        <label htmlFor="username">Username</label>
                         <input 
-                            id="last_name"
+                            id="username"
                             type="text"
-                            name="last_name"
-                            placeholder="Last Name"
+                            name="username"
+                            placeholder="Choose a username"
                             required={true}
-                            value={formData.last_name}
+                            value={formData.username}
                             onChange={handleChange}
                         />
 
-                        <label htmlFor="about">About Me</label>
+                        <label htmlFor="pronouns">Pronouns</label>
+                        <input 
+                            id="pronouns"
+                            type="text"
+                            name="pronouns"
+                            placeholder="Pronouns"
+                            required={false}
+                            value={formData.pronouns}
+                            onChange={handleChange}
+                        />
+
+                        <label htmlFor="about">Bio</label>
                         <input 
                             id="about"
                             type="text"
@@ -123,16 +140,6 @@ function OnBoarding() {
                             placeholder="Tell me something about yourself."
                             required={true}
                             value={formData.about}
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="goals">Goals</label>
-                        <input
-                            id="goals"
-                            type="text"
-                            name="goals"
-                            placeholder="What are your gym goals?"
-                           
-                            value={formData.goals}
                             onChange={handleChange}
                         />
                         
@@ -152,76 +159,26 @@ function OnBoarding() {
                          {formData.url &&   <img src={formData.url} alt="profile picture preview"/>}
                         </div>
 
-                        <label>Preferred Workout Time</label>
-                        <div className="multiple-input-container">
-                            <input
-                                id="morning-workout-time"
-                                type="radio"
-                                name="workout_time"
-                                value="Morning"
-                                onChange={handleChange}
-                                checked={formData.workout_time === 'Morning'}
-                            />
-                            <label htmlFor="morning-workout-time">Morning</label>
-                            <input
-                                id="midday-workout-time"
-                                type="radio"
-                                name="workout_time"
-                                value="Midday"
-                                onChange={handleChange}
-                                checked={formData.workout_time === 'Midday'}
-                            />
-                            <label htmlFor="midday-workout-time">Midday</label>
-                            <input
-                                id="night-workout-time"
-                                type="radio"
-                                name="workout_time"
-                                value="Night"
-                                onChange={handleChange}
-                                checked={formData.workout_time === 'Night'}
-                            />
-                            <label htmlFor="night-workout-time">Night</label>
-                        </div>
 
-                        <label>Preferred Workout Intensity</label>
-
-                        <div className="multiple-input-container">
-                            <input
-                                id="light-workout-intensity"
-                                type="radio"
-                                name="workout_intensity"
-                                value="Light"
-                                onChange={handleChange}
-                                checked={formData.workout_intensity === 'Light'}
-                            />
-                            <label htmlFor="light-workout-intensity">Light</label>
-                            <input
-                                id="medium-workout-intensity"
-                                type="radio"
-                                name="workout_intensity"
-                                value="Medium"
-                                onChange={handleChange}
-                                checked={formData.workout_intensity === 'Medium'}
-                            />
-                            <label htmlFor="medium-workout-intensity">Medium</label>
-                            <input
-                                id="intense-workout-intensity"
-                                type="radio"
-                                name="workout_intensity"
-                                value="Intense"
-                                onChange={handleChange}
-                                checked={formData.workout_intensity === 'Intense'}
-                            />
-                            <label htmlFor="intense-workout-intensity">Intense</label>
-                        </div>
-                        <label htmlFor="favorite_exercise">Favorite Exercise</label>
-                        <input
-                            id="favorite_exercise"
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            id="password"
                             type="text"
-                            name="favorite_exercise"
-                            placeholder="What's your favorite thing to do in the gym?"
-                          
-                            value={formData.favorite_exercise}
+                            name="password"
+                            placeholder="Choose a password"
+                            required={true}
+                            value={formData.password}
+                            onChange={handleChange}
+                        />
+
+                        <label htmlFor="confirmpassword">Confirm Password</label>
+                        <input 
+                            id="confirmpassword"
+                            type="text"
+                            name="confirmpassword"
+                            placeholder="Choose a password"
+                            required={true}
+                            value={formData.confirmpassword}
                             onChange={handleChange}
                         />
 
