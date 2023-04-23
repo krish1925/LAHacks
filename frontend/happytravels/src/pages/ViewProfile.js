@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import Nav from "../components/Nav";
 
 function ViewProfile() {
-    return (
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/users');
+        setUsers(response.data);
+      } catch(error) {
+        console.log(error)
+      }
+    }
+    getUsers();
+  }, []);
+
+  return (
     <div>
-        <Nav />
-        <div class = "profile">
-      <h1>Jane Doe</h1>
-      <img src="https://placekitten.com/200/300" alt="profile picture" />
-      <p> (she/her) </p>
-      <p><b>About Me:</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel justo turpis. Nam feugiat tellus massa, vel feugiat justo dignissim non. Nullam id purus mi. Nunc mollis purus vitae ante ultrices commodo. Sed vel enim tincidunt, hendrerit leo sit amet, viverra mauris. </p>
-      </div>
-      </div>
+      <Nav />
+      {users.map(user => (
+        <div key={user._id} className="profile">
+          <h1>{user.Name}</h1>
+          <img src={user.url} alt="profile picture" />
+          <p> ({user.Pronouns}) </p>
+          <p><b>About Me:</b> {user.about}</p>
+        </div>
+      ))}
+    </div>
   );
 }
- 
-  
-export default ViewProfile ;
+
+export default ViewProfile;
