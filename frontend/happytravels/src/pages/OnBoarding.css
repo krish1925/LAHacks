@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+}
+
+.onboarding {
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.submit {
+    text-align: center;
+}
