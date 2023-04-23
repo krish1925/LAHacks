@@ -1,12 +1,15 @@
 //big sign up form
+import { useCookies } from 'react-cookie';
 // import { navigate } from '@reach/router';
 import {useState} from 'react'
 // import { useCookies } from 'react-cookie'
 import Nav from '../components/Nav'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import apiClient from '../apiClient'
 
 function OnBoarding() {
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
     // const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState ({
         // user_id: cookies.UserId,
@@ -195,6 +198,7 @@ function OnBoarding() {
             </div>
         </>
     );
+}
 }
 
 export default OnBoarding;
