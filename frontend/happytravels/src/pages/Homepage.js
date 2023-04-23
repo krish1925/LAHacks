@@ -17,14 +17,16 @@ function Homepage() {
   return (
     <div>
         <Nav />
-        <div style={{ margin: '20% 35%' }}>
-            <h1>Search, Explore </h1>
+        <div class = "homepage">
+          <div class = "fade-in-text">
+            <h1>Wanderlust</h1>
+            </div>
         {/* <input type="text" placeholder="Search..." onChange={onChangeHandler} value={inputValue}></input> */}
-        <input type="text" placeholder="Search..." 
+        <input type="text" placeholder="   Search destinations" 
           onChange={onChangeHandler} 
           value={inputValue}
         ></input>
-              <button type="submit">Search</button>
+              <button type="submit">Go</button>
         </div>  
     </div>
   );
