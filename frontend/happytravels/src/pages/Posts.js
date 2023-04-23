@@ -93,7 +93,7 @@ function Posts() {
                     </section>
 
                     <section>
-                        <label htmlFor="about">Image (optional)</label>
+                        <label htmlFor="about">Image</label>
                         <br />
                         <input
                             type="url"

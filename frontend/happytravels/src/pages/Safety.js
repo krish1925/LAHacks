@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Nav from "../components/Nav";
 import LikeButton from "../components/LikeButton";
+import { useLocation } from "react-router-dom";
 
 function Safety() {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [filtered_cats, setFilteredCatPosts] = useState([]);
+  const loc = useLocation();
 
   useEffect(() => {
     const getPosts = async () => {
@@ -20,9 +23,23 @@ function Safety() {
   }, []);
 
   useEffect(() => {
-    const filtered = posts.filter(post => post.formData.category === 'Safety/Tips');
-    setFilteredPosts(filtered);
-  }, [posts]);
+    if (loc.state && loc.state.location) {
+      const filteredPosts = posts.filter(post => post.formData.location === loc.state.location);
+      setFilteredPosts(filteredPosts);
+      const filtered_cats = filteredPosts.filter(post => post.formData.category === 'Safety/Tips');
+      setFilteredCatPosts(filtered_cats);
+
+    } else {
+      setFilteredPosts(posts);
+      const filtered_cats = filteredPosts.filter(post => post.formData.category === 'Safety/Tips');
+      setFilteredCatPosts(filtered_cats);
+    }
+  }, [posts, loc]);
+
+  // useEffect(() => {
+  //   const filtered = posts.filter(post => post.formData.category === 'Safety/Tips');
+  //   setFilteredPosts(filtered);
+  // }, [posts]);
 
   return (
     <div class="whole-body">
@@ -30,7 +47,7 @@ function Safety() {
       <div class = "body">
       <h1> Safety </h1>
       <div class = "post-card">
-      {filteredPosts.map(post => (
+      {filtered_cats.map(post => (
         <div key={post._id} className="card">
           <h2> <span style={{ fontWeight: 'bold', fontSize: '30px' }}>{post.formData.username}</span> {' • '} <span style={{ color: '#999' , fontSize: '20px'}}>{post.formData.location}</span> </h2>
           <div class="content">
