@@ -119,7 +119,7 @@ function Posts() {
                                 onChange={handleChange}
                                 checked={formData.category === 'Itinerary'}
                             />
-                            <label htmlFor="itinerary-category">Itinenary</label>
+                            <label htmlFor="itinerary-category">Itinerary</label>
                             <input 
                                 id="safety"
                                 type="radio"
