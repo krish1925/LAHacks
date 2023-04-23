@@ -100,7 +100,7 @@ function Posts() {
                             name="img"
                             id="img"
                             onChange={handleChange}
-                            required={false}
+                            required={true}
                         />
 
                         <div className="photo-container">
