@@ -3,10 +3,12 @@ import axios from 'axios';
 import "./Feed.css"
 import Nav from "../components/Nav";
 import LikeButton from "../components/LikeButton";
+import { useLocation } from "react-router-dom";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const loc = useLocation();
 
   useEffect(() => {
     const getPosts = async () => {
@@ -21,9 +23,13 @@ function Feed() {
   }, []);
 
   useEffect(() => {
-    const filtered = posts.filter(post => post.formData.category === 'Feed');
-    setFilteredPosts(filtered);
-  }, [posts]);
+    if (loc.state && loc.state.location) {
+      const filtered = posts.filter(post => post.formData.location === loc.state.location);
+      setFilteredPosts(filtered);
+    } else {
+      setFilteredPosts(posts);
+    }
+  }, [posts, loc]);
 
   return (
     <div class="whole-body">
