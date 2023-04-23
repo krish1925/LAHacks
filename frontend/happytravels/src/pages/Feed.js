@@ -34,7 +34,7 @@ function Feed() {
       <div class = "post-card">
       {filteredPosts.map(post => (
         <div key={post._id} className="card">
-          <h2> <span style={{ fontWeight: 'bold', fontSize: '30px' }}>{post.formData.username}</span> {' • '} <span style={{ color: '#999' , fontSize: '20px'}}>{post.formData.location}</span> </h2>
+          <h2> <span style={{ fontWeight: 'bold', fontSize: '30px', textAlign: 'left' }}>{post.formData.username}</span> {' • '} <span style={{ color: '#999' , fontSize: '20px'}}>{post.formData.location}</span> </h2>
           <div class="content">
           <img src={post.formData.img} alt="post picture"  />
           <p><b></b> {post.formData.caption}</p>
