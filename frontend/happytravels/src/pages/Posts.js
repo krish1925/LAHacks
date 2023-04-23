@@ -1,3 +1,4 @@
+import './Posts.css'
 import {useState} from 'react'
 import Nav from '../components/Nav'
 import {useNavigate} from 'react-router-dom'
@@ -53,16 +54,14 @@ function Posts() {
             />
             <div className="posts">
                 <h2>
-                    <span style={{color:'#007788'}}>SET </span>
-                    <span style={{color:'#159897'}}>UP </span>
-                    <span style={{color:'#21ada8'}}>YOUR </span>
-                    <span style={{color:'#8cd6a2'}}>PROFILE </span>
+                    MAKE A POST
                 </h2>
 
                 <form onSubmit={handleSubmit}>
                     <section>
 
                         <label htmlFor="username">Username</label>
+                        <br />
                         <input 
                             id="username"
                             type="text"
@@ -73,7 +72,11 @@ function Posts() {
                             onChange={handleChange}
                         />
 
+                        <br />
+                        <br />
+
                         <label htmlFor="location">Location</label>
+                        <br />
                         <input 
                             id="location"
                             type="text"
@@ -84,10 +87,14 @@ function Posts() {
                             onChange={handleChange}
                         />
                         
+                        <br />
+                        <br />
+
                     </section>
 
                     <section>
                         <label htmlFor="about">Image (optional)</label>
+                        <br />
                         <input
                             type="url"
                             name="img"
@@ -100,6 +107,7 @@ function Posts() {
                          {formData.img &&   <img src={formData.img} alt="image preview"/>}
                         </div>
 
+                        <br />
                         <label>Category</label>
                         <div className="multiple-input-container">
                             <input 
@@ -111,6 +119,7 @@ function Posts() {
                                 checked={formData.category === 'Feed'}
                             />
                             <label htmlFor="feed-category">Feed</label>
+                            <br />
                             <input 
                                 id="itinerary"
                                 type="radio"
@@ -120,6 +129,7 @@ function Posts() {
                                 checked={formData.category === 'Itinerary'}
                             />
                             <label htmlFor="itinerary-category">Itinerary</label>
+                            <br />
                             <input 
                                 id="safety"
                                 type="radio"
@@ -131,7 +141,9 @@ function Posts() {
                             <label htmlFor="safety-category">Safety/Tips</label>
                         </div>
 
+                        <br />
                         <label htmlFor="caption">Caption</label>
+                        <br />
                         <input 
                             id="caption"
                             type="text"
@@ -141,8 +153,11 @@ function Posts() {
                             value={formData.caption}
                             onChange={handleChange}
                         />
-
-                        <input type="submit"/>
+                        <br />
+                        <div className='submit'>
+                            <br />
+                            <input type="submit"/>
+                        </div>
                     </section>
 
                 </form>
