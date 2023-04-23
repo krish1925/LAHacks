@@ -81,72 +81,87 @@ function OnBoarding() {
             />
             <div className="onboarding">
                 <h2>
-                    <span style={{color:'#007788'}}>SIGN </span>
-                    <span style={{color:'#159897'}}>UP </span>
+                    SIGN UP 
                 </h2>
 
                 <form onSubmit={handleSubmit}>
                     <section>
                         <label htmlFor="first_name">First Name</label>
+                        <br />
                         <input 
                             id="first_name"
                             type="text"
                             name="first_name"
-                            placeholder="First Name"
+                            placeholder="  First Name"
                             required={true}
                             value={formData.first_name}
                             onChange={handleChange}
                         />
 
+                        <br />
+                        <br />
+
                         <label htmlFor="last_name">Last Name</label>
+                        <br />
                         <input 
                             id="last_name"
                             type="text"
                             name="last_name"
-                            placeholder="Last Name"
+                            placeholder="  Last Name"
                             required={true}
                             value={formData.last_name}
                             onChange={handleChange}
                         />
+                         <br />
+                         <br />
 
                         <label htmlFor="username">Username</label>
+                        <br />
                         <input 
                             id="username"
                             type="text"
                             name="username"
-                            placeholder="Choose a username"
+                            placeholder="  Create a username"
                             required={true}
                             value={formData.username}
                             onChange={handleChange}
                         />
+                         <br />
+                         <br />
 
                         <label htmlFor="pronouns">Pronouns</label>
+                        <br />
                         <input 
                             id="pronouns"
                             type="text"
                             name="pronouns"
-                            placeholder="Pronouns"
+                            placeholder="  Pronouns"
                             required={false}
                             value={formData.pronouns}
                             onChange={handleChange}
                         />
+                         <br />
+                         <br />
 
-                        <br></br>
                         <label htmlFor="about">Bio</label>
+                        <br />
                         <input 
                             id="about"
                             type="text"
                             name="about"
-                            placeholder="Tell me something about yourself."
+                            placeholder="  Tell me something about yourself."
                             required={true}
                             value={formData.about}
                             onChange={handleChange}
                         />
+                        <br />
+                         <br />
                         
                     </section>
 
                     <section>
                         <label htmlFor="about">Profile Photo</label>
+                        <br />
                         <input
                             type="url"
                             name="url"
@@ -154,6 +169,8 @@ function OnBoarding() {
                             onChange={handleChange}
                             required={true}
                         />
+                         <br />
+                         <br />
 
                         <div className="photo-container">
                          {formData.url &&   <img src={formData.url} alt="profile picture preview"/>}
@@ -161,26 +178,32 @@ function OnBoarding() {
 
 
                         <label htmlFor="password">Password</label>
+                        <br />
                         <input 
                             id="password"
                             type="text"
                             name="password"
-                            placeholder="Choose a password"
+                            placeholder="  Choose a password"
                             required={true}
                             value={formData.password}
                             onChange={handleChange}
                         />
+                         <br />
+                         <br />
 
                         <label htmlFor="confirmpassword">Confirm Password</label>
+                        <br />
                         <input 
                             id="confirmpassword"
                             type="text"
                             name="confirmpassword"
-                            placeholder="Choose a password"
+                            placeholder="  Choose a password"
                             required={true}
                             value={formData.confirmpassword}
                             onChange={handleChange}
                         />
+                         <br />
+                          <br />
 
                         <div className="submit">
                             <input type="submit"/>
