@@ -1,7 +1,6 @@
  body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    background-image: url(/src/components/Img/diego-ph-BCuxVP5WEsU-unsplash\ \(1\).jpg);
   }
 
 
@@ -27,7 +26,7 @@
   font-size: 150px;
   margin-top: 2px;
   font-family: "Snell Roundhand", cursive;
-  color: #ffff;
+  color: #2b2c2c;
   animation: fadeIn 5s;
 }
 
@@ -68,9 +67,9 @@ input[type="text"]{
   
 button[type="submit"]{
   padding: 10px 20px;
-  background-color: #ffff;
+  background-color: #f85072;
   border: none;
-  color: #2f2b31;
+  color: #ffff;
   border-radius: 30px;
   margin-left: 15px;
   font-weight: bold;
