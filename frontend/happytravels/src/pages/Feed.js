@@ -1,7 +1,7 @@
+import "./Feed.css"
 import React from "react";
 import Nav from "../components/Nav";
 import LikeButton from "../components/LikeButton";
-
 
 function Feed() {
     const data = [
@@ -26,13 +26,15 @@ function Feed() {
 
 
     ];    return (
-        <div >
+        <div class ="whole-page">
             <Nav></Nav>
+          <div class = "body">
+            <h1> Feed </h1>
           {data.map((item, index) => (
             <div key={index} className="card">
               <div className="card-body">
                 <div className="heading">
-                  <h5 className="card-title"> <b> {item.username} </b> </h5>
+                  <h5 className="card-title"> <b> {item.username} </b> </h5> 
                   <h5 className="place">{item.location}</h5>
                   <h5 className="time">{item.time_posted}</h5>
 
@@ -49,6 +51,7 @@ function Feed() {
               </div>
             </div>
           ))}
+        </div>
         </div>
       );
   }

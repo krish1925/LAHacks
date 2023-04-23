@@ -1,0 +1,24 @@
+.whole-body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+.body{
+    align-items: center;
+    position: absolute; /* or relative, depending on your layout */
+    top: 50%;
+    left: 50%;
+    height: 100vh;
+    margin-top: 50px;
+    transform: translate(-50%, -50%); 
+}
+
+.body h1{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+
+}
+
