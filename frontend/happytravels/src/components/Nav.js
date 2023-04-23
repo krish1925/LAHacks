@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 function Nav() {
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogout = () => {
@@ -37,6 +39,17 @@ function Nav() {
             Safety
           </Link>
         </li>
+
+        {cookies.AuthToken ? null : <li className="nav-item">
+          <Link to="/OnBoarding" className="nav-link">
+            OnBoarding
+          </Link>
+        </li>}
+        {cookies.AuthToken ? null : <li className="nav-item">
+          <Link to="/loginpage" className="nav-link">
+            Login
+          </Link>
+        </li>}
       {isLoggedIn ? (
          <>  
             <li className="nav-item">

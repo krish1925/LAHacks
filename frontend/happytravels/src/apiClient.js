@@ -3,6 +3,22 @@ import axios from "axios";
 
 class apiClient{
 
+  constructor() {
+    this.token = null;
+    this.tokenName = "happy";
+  }
+  getTokenName() {
+    return this.tokenName;
+  }
+  getToken(){
+    return this.token
+  }
+
+  setToken(token) {
+    this.token = token;
+    localStorage.setItem(this.tokenName, token);
+  }
+
   getMapSuggestions(input){
     // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -24,4 +40,4 @@ class apiClient{
 
 }
 
-export default new apiClient
+export default new apiClient()

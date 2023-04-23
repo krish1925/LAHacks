@@ -9,6 +9,7 @@ import Itinenary from './pages/Itinenary';
 import Recommendations from './pages/Recommendations';
 import Safety from './pages/Safety';
 import ViewProfile from './pages/ViewProfile';
+import Posts from './pages/Posts'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
     <Route path="/OnBoarding" element={<OnBoarding/>}/>
     <Route path="/Safety" element={<Safety/>}/>
     <Route path="/ViewProfile" element={<ViewProfile/>}/>
+    <Route path="/Posts" element={<Posts/>}/>
     </Routes>
     </BrowserRouter>
   );
