@@ -1,48 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import Nav from "../components/Nav";
+import LikeButton from "../components/LikeButton";
 
-function Itinenary() {
-    return (
-      <div >
-          <Nav />
-          <body style={{ margin: '0.5% 35%' }}>
-    <h1>Sample Itinerary</h1>
-    <ul>
-        <li><strong>Day 1:</strong> Arrival in City</li>
-        <ul>
-            <li>Check-in to hotel</li>
-            <li>Explore the city</li>
-            <li>Dinner at local restaurant</li>
-        </ul>
-        <li><strong>Day 2:</strong> City Tour</li>
-        <ul>
-            <li>Breakfast at hotel</li>
-            <li>Visit local museum</li>
-            <li>Shopping at the markets</li>
-            <li>Lunch at famous local restaurant</li>
-            <li>City walking tour</li>
-            <li>Dinner at rooftop restaurant with city view</li>
-        </ul>
-        <li><strong>Day 3:</strong> Outdoor Adventure</li>
-        <ul>
-            <li>Breakfast at hotel</li>
-            <li>Hiking to scenic viewpoint</li>
-            <li>Lunch at mountain top restaurant</li>
-            <li>Paragliding adventure</li>
-            <li>Dinner at hotel</li>
-        </ul>
-        <li><strong>Day 4:</strong> Departure</li>
-        <ul>
-            <li>Check-out from hotel</li>
-            <li>Transfer to airport</li>
-            <li>Departure flight</li>
-        </ul>
-    </ul>
-</body>
-        
+function Safety() {
+  const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/posts');
+        setPosts(response.data);
+      } catch(error) {
+        console.log(error)
+      }
+    }
+    getPosts();
+  }, []);
+
+  useEffect(() => {
+    const filtered = posts.filter(post => post.formData.category === 'Itinerary');
+    setFilteredPosts(filtered);
+  }, [posts]);
+
+  return (
+    <div class="whole-body">
+      <Nav />
+      <div class = "body">
+      <h1> Itinerary </h1>
+      <div class = "post-card">
+      {filteredPosts.map(post => (
+        <div key={post._id} className="card">
+          <h2> <span style={{ fontWeight: 'bold', fontSize: '30px' }}>{post.formData.username}</span> {' • '} <span style={{ color: '#999' , fontSize: '20px'}}>{post.formData.location}</span> </h2>
+          <div class="content">
+          <img src={post.formData.img} alt="post picture"  />
+          <p><b></b> {post.formData.caption}</p>
+          </div>
+          <LikeButton></LikeButton>
+        </div>
+      ))}
       </div>
-    );
-  }
-  
-  
-export default Itinenary;
+      </div>
+    </div>
+  );
+}
+
+export default Safety;

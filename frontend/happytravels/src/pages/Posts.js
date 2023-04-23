@@ -25,7 +25,7 @@ function Posts() {
         try {
           const response = await axios.post("http://localhost:8000/posts", { formData });
           const success = response.status === 200;
-          if (success) navigate("/feed");
+          if (success) navigate("/$(category)");
         } catch (err) {
           console.log(err);
         }
