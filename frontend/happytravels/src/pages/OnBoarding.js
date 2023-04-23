@@ -1,15 +1,13 @@
 //big sign up form
-import { useCookies } from 'react-cookie';
+import "./OnBoarding.css"
 // import { navigate } from '@reach/router';
 import {useState} from 'react'
 // import { useCookies } from 'react-cookie'
 import Nav from '../components/Nav'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-import apiClient from '../apiClient'
 
 function OnBoarding() {
-    const [cookies, setCookie, removeCookie] = useCookies(['user']);
     // const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState ({
         // user_id: cookies.UserId,
@@ -53,17 +51,12 @@ function OnBoarding() {
         try {
           const response = await axios.post("http://localhost:8000/users", { formData });
           const success = response.status === 200;
-          if (success) {
-                    navigate("/feed")
-                    apiClient.setToken(response.data.token)
-                    setCookie('AuthToken', response.data.token, { path: '/' });
-                    setCookie('username', formData.username, { path: '/' });
-                    console.log('signuped');
-                };
+          if (success) navigate("/feed");
         } catch (err) {
           console.log(err);
         }
-    };
+      }
+      };
       
 
     function handleChange(e) {
@@ -88,10 +81,8 @@ function OnBoarding() {
             />
             <div className="onboarding">
                 <h2>
-                    <span style={{color:'#007788'}}>SET </span>
+                    <span style={{color:'#007788'}}>SIGN </span>
                     <span style={{color:'#159897'}}>UP </span>
-                    <span style={{color:'#21ada8'}}>YOUR </span>
-                    <span style={{color:'#8cd6a2'}}>PROFILE </span>
                 </h2>
 
                 <form onSubmit={handleSubmit}>
@@ -140,6 +131,7 @@ function OnBoarding() {
                             onChange={handleChange}
                         />
 
+                        <br></br>
                         <label htmlFor="about">Bio</label>
                         <input 
                             id="about"
@@ -190,7 +182,9 @@ function OnBoarding() {
                             onChange={handleChange}
                         />
 
-                        <input type="submit"/>
+                        <div className="submit">
+                            <input type="submit"/>
+                        </div>
                     </section>
 
                 </form>
@@ -198,7 +192,6 @@ function OnBoarding() {
             </div>
         </>
     );
-}
 }
 
 export default OnBoarding;

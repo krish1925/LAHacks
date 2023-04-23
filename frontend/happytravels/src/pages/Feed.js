@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "./Feed.css"
 import Nav from "../components/Nav";
-//import LikeButton from "../components/LikeButton";
+import LikeButton from "../components/LikeButton";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
