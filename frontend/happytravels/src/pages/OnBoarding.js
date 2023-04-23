@@ -1,4 +1,5 @@
 //big sign up form
+import "./OnBoarding.css"
 // import { navigate } from '@reach/router';
 import {useState} from 'react'
 // import { useCookies } from 'react-cookie'
@@ -80,10 +81,8 @@ function OnBoarding() {
             />
             <div className="onboarding">
                 <h2>
-                    <span style={{color:'#007788'}}>SET </span>
+                    <span style={{color:'#007788'}}>SIGN </span>
                     <span style={{color:'#159897'}}>UP </span>
-                    <span style={{color:'#21ada8'}}>YOUR </span>
-                    <span style={{color:'#8cd6a2'}}>PROFILE </span>
                 </h2>
 
                 <form onSubmit={handleSubmit}>
@@ -132,6 +131,7 @@ function OnBoarding() {
                             onChange={handleChange}
                         />
 
+                        <br></br>
                         <label htmlFor="about">Bio</label>
                         <input 
                             id="about"
@@ -182,7 +182,9 @@ function OnBoarding() {
                             onChange={handleChange}
                         />
 
-                        <input type="submit"/>
+                        <div className="submit">
+                            <input type="submit"/>
+                        </div>
                     </section>
 
                 </form>

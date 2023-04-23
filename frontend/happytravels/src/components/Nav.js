@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCookies } from 'react-cookie';
+import apiClient from "../apiClient";
 
 function Nav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -7,6 +9,7 @@ function Nav() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     // perform logout action here
+    apiClient.setToken(null)
   };
 
   return (
