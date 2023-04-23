@@ -66,7 +66,7 @@ function Posts() {
                             id="username"
                             type="text"
                             name="username"
-                            placeholder="Choose a username"
+                            placeholder="  Choose a username"
                             required={true}
                             value={formData.username}
                             onChange={handleChange}
@@ -81,7 +81,7 @@ function Posts() {
                             id="location"
                             type="text"
                             name="location"
-                            placeholder="Enter location"
+                            placeholder="  Enter location"
                             required={true}
                             value={formData.location}
                             onChange={handleChange}
@@ -118,7 +118,7 @@ function Posts() {
                                 onChange={handleChange}
                                 checked={formData.category === 'Feed'}
                             />
-                            <label htmlFor="feed-category">Feed</label>
+                             <label htmlFor="itinerary-category" style={{ marginLeft: '10px' }}>Feed</label>
                             <br />
                             <input 
                                 id="itinerary"
@@ -128,7 +128,7 @@ function Posts() {
                                 onChange={handleChange}
                                 checked={formData.category === 'Itinerary'}
                             />
-                            <label htmlFor="itinerary-category">Itinerary</label>
+                            <label htmlFor="itinerary-category" style={{ marginLeft: '10px' }}>Itinerary</label>
                             <br />
                             <input 
                                 id="safety"
@@ -138,7 +138,7 @@ function Posts() {
                                 onChange={handleChange}
                                 checked={formData.category === 'Safety/Tips'}
                             />
-                            <label htmlFor="safety-category">Safety/Tips</label>
+                             <label htmlFor="itinerary-category" style={{ marginLeft: '10px' }}>Safety</label>
                         </div>
 
                         <br />
@@ -148,7 +148,7 @@ function Posts() {
                             id="caption"
                             type="text"
                             name="caption"
-                            placeholder="Enter your description here"
+                            placeholder="  Enter your description here (100 words)"
                             required={true}
                             value={formData.caption}
                             onChange={handleChange}
