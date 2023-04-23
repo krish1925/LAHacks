@@ -1,6 +1,7 @@
  body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
+    background-image: url(/src/components/Img/diego-ph-BCuxVP5WEsU-unsplash\ \(1\).jpg);
   }
 
 
@@ -26,7 +27,7 @@
   font-size: 150px;
   margin-top: 2px;
   font-family: "Snell Roundhand", cursive;
-  color: #353535;
+  color: #ffff;
   animation: fadeIn 5s;
 }
 
@@ -67,21 +68,10 @@ input[type="text"]{
   
 button[type="submit"]{
   padding: 10px 20px;
-  background-color: #f64775;
+  background-color: #ffff;
   border: none;
-  color: #fff;
+  color: #2f2b31;
   border-radius: 30px;
   margin-left: 15px;
   font-weight: bold;
 }
-
-
-/* button[type="random"] {
-    padding: 10px 20px;
-    background-color: #f64775;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    height: 5%; set the same height as the input field */
- /* }  */
