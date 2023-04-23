@@ -31,21 +31,6 @@ function OnBoarding() {
           alert("Passwords do not match");
         }
         else{
-        // const isInvalidBirthday = formData.dob_day > 31 ||
-        //   formData.dob_month > 12 ||
-        //   formData.dob_year > 2023;
-      
-        // const isFocusOnSchool = formData.dob_year > 2010;
-      
-        // if (isInvalidBirthday) {
-        //   alert("Invalid birthday");
-        //   return; // early return to avoid clearing form data
-        // }
-      
-        // if (isFocusOnSchool) {
-        //   alert("Focus on school bro");
-        //   return; // early return to avoid clearing form data
-        // }
         console.log("submitted");
       
         try {
