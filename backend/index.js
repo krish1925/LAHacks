@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 8000;
-const uri = 'mongodb+srv://krishhnpatel:Hello123@cluster0.ndlbumc.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://krishhnpatel:<PASSWORD>@cluster0.ndlbumc.mongodb.net/?retryWrites=true&w=majority';
 
 app.use(cors()) // Use this after the variable declaration
 

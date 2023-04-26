@@ -103,9 +103,10 @@ function Posts() {
                             required={true}
                         />
 
-                        <div className="photo-container">
-                         {formData.img &&   <img src={formData.img} alt="image preview"/>}
-                        </div>
+<div className="photo-container">
+  {formData.img && <img src={formData.img} alt="image preview" style={{ maxWidth: '200px', maxHeight: '200px' }} />}
+</div>
+
 
                         <br />
                         <label>Category</label>

@@ -5,7 +5,7 @@ import EStyleSheet from 'react-extended-stylesheet';
 EStyleSheet.build();
 
 //Normally wouldn't store my token this way if this were a production app :)
-const API_TOKEN = 'Bearer 4H6ELX745M6BUM6W7A4C';
+const API_TOKEN = '<API_KEY_HERE>';
 const SEARCH_URL = 'https://www.eventbriteapi.com/v3/events/search/';
 const ds = {
     cloneWithRows: (data) => ({ dataSource: data })

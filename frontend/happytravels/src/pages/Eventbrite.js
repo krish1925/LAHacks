@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const API_KEY = 'AIzaSyArq3VutVvfi5-ECgS0iRogWZVJZXjSTM4';
+const API_KEY = '<KEY_NAME_HERE>';
 const PLACES_API_URL = `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=${API_KEY}&types=(cities)`;
 
 const CityDropdown = () => {
